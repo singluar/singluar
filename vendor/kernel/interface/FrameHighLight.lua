@@ -1,0 +1,2 @@
+---@type FrameHighLight
+local _

@@ -1,0 +1,13 @@
+﻿.idea
+.fleet
+*.BridgeLabelsAndRatings
+projects
+assets
+assetsNew
+temp
+SCACHE
+conf
+vendor/lni
+vendor/models
+vendor/WE
+vendor/w3x2lni

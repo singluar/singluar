@@ -1,0 +1,1 @@
+ability = ability or {}

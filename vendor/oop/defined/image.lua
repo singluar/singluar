@@ -1,0 +1,22 @@
+---@param this Image
+Class("Image")
+    .construct(
+    function(this, options)
+        local h = J.CreateImage(options.texture, options.width, options.height, 0, -options.width / 2, -options.height / 2, 0, 0, 0, 0, 3)
+        J.SetImageAboveWater(h, true, true)
+        J.SetImageRenderAlways(h, true)
+        PropChange(this, "handle", "std", h, false)
+        PropChange(this, "restruct", "std", Array(), false)
+        PropChange(this, "position", "std", { 0, 0 }, false)
+        PropChange(this, "rgba", "std", { 255, 255, 255, 255 }, false)
+        PropChange(this, "texture", "std", options.texture, false)
+        PropChange(this, "size", "std", { options.width, options.height }, false)
+        PropChange(this, "show", "std", true, false)
+    end)
+    .destroy(
+    function(this)
+        local h = this.prop("handle")
+        J.ShowImage(h, false)
+        J.DestroyImage(h)
+        this.prop("handle", NIL)
+    end)
